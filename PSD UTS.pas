@@ -1,9 +1,9 @@
 program bagasprastomo105;
-uses math, crt;
+uses crt;
 
 var
 makanan : array[1..99]of string;
-jumlah,banyak : array[1..99]of integer;
+jumlah,banyak : array[1..99]of longint;
 harga : array[1..99] of longint;
 pelanggan : string;
 jawab : char;
@@ -43,7 +43,7 @@ begin
                 writeln('No   Nama Makanan              Banyak   Harga     Jumlah');
                 for i := 1 to a do
                 begin
-                        writeln(i,'    ',makanan[i],'                   ',banyak[i],'    ',harga[i],'    ',jumlah[i])
+                        writeln(i,'    ',makanan[i],'                        ',banyak[i],'        ',harga[i],'        ',jumlah[i])
                 end;
                 for i := 1 to a do
                 begin
@@ -57,21 +57,26 @@ begin
                 readln(bayar);
                 if (bayar<total) then
                 begin
-                        writeln('Ente kadang kadang ente');
+                        writeln('INVALID (Uang pembayaran kurang!)');
                 end
                 else
                 begin
                         kembalian:=bayar-total;
                         writeln('Kembalian      : ',kembalian);
                         writeln('');
-                        writeln('==============================================================');
-                        writeln('');
-                        writeln('                       TERIMA KASIH');
                 end;
         end
         else if (jawab='N') or (jawab='n') then
         begin
+                writeln('==============================================================');
                 writeln('');
-                writeln('Terima Kasih!');
+                writeln('                       TERIMA KASIH');
+                writeln('');
+                readln;
         end;
+        writeln('==============================================================');
+                writeln('');
+                writeln('                       TERIMA KASIH');
+                writeln('');
+                readln;
 end.
