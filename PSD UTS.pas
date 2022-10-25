@@ -2,7 +2,7 @@ program bagasprastomo105;
 uses crt;
 var
 
-menu : record //ini record sama stringnya tu disini ygy jgn lupa diapus ini ygy
+menu : record //ini record sama arraynya tu disini ygy jgn lupa diapus ini ygy
         makanan : array[1..99]of string;
         jumlah,banyak : array[1..99]of longint;
         harga : array[1..99] of longint;
