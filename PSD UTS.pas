@@ -1,10 +1,13 @@
 program bagasprastomo105;
 uses crt;
-
 var
-makanan : array[1..99]of string;
-jumlah,banyak : array[1..99]of longint;
-harga : array[1..99] of longint;
+
+menu : record //ini record sama stringnya tu disini ygy jgn lupa diapus ini ygy
+        makanan : array[1..99]of string;
+        jumlah,banyak : array[1..99]of longint;
+        harga : array[1..99] of longint;
+end;
+
 pelanggan : string;
 jawab : char;
 i,a,kembalian,bayar,total : longint;
@@ -21,12 +24,12 @@ begin
         begin
                 writeln('Masukan data ke ',i);
                 write('Nama Makanan     : ');
-                readln(makanan[i]);
+                readln(menu.makanan[i]);
                 write('Banyaknya        : ');
-                readln(banyak[i]);
+                readln(menu.banyak[i]);
                 write('Harga            : ');
-                readln(harga[i]);
-                jumlah[i]:=banyak[i]*harga[i];
+                readln(menu.harga[i]);
+                menu.jumlah[i]:=menu.banyak[i]*menu.harga[i];
                 writeln('');
         end;
         write('Cetak Struk?(Y/N) : ');
@@ -43,11 +46,11 @@ begin
                 writeln('No   Nama Makanan              Banyak   Harga     Jumlah');
                 for i := 1 to a do
                 begin
-                        writeln(i,'    ',makanan[i],'                        ',banyak[i],'        ',harga[i],'        ',jumlah[i])
+                        writeln(i,'    ',menu.makanan[i],'                        ',menu.banyak[i],'        ',menu.harga[i],'        ',menu.jumlah[i])
                 end;
                 for i := 1 to a do
                 begin
-                        total:=total+jumlah[i];
+                        total:=total+menu.jumlah[i];
                 end;
                 writeln('');
                 writeln('==============================================================');
